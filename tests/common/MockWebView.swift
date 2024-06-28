@@ -23,7 +23,7 @@ class MockWebView: WebViewProtocol {
     
     func set(navigationDelegate _: WKNavigationDelegate?) {}
     
-    func evaluateJavaScript(_: String, completionHandler: ((Any?, Error?) -> Void)?) {
+    func evaluateJavaScript(_ javaScriptString: String, completionHandler: ((Any?, (any Error)?) -> Void)?) {
         completionHandler?(height, nil)
     }
     

@@ -17,9 +17,15 @@ protocol WebViewProtocol {
     @discardableResult func loadHTMLString(_ string: String, baseURL: URL?) -> WKNavigation?
     func set(position: ViewPosition)
     func set(navigationDelegate: WKNavigationDelegate?)
-    func evaluateJavaScript(_ javaScriptString: String, completionHandler: ((Any?, Error?) -> Void)?)
+    func evaluateJavaScript(_ javaScriptString: String, completionHandler: ((Any?, (any Error)?) -> Void)?)
     func layoutSubviews()
     func calculateHeight() -> Pending<CGFloat, IterableError>
+}
+
+extension WebViewProtocol {
+    func evaluateJavaScript(_ javaScriptString: String, completionHandler: ((Any?, (any Error)?) -> Void)?) {
+        
+    }
 }
 
 extension WKWebView: WebViewProtocol {
